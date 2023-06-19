@@ -5,6 +5,6 @@
 1. Oracle VM Virtualbox
 2. Vagrant
 3. Vagrant plugins
-    * vagrant plugin install vagrant-hostmanager(to ping other servers(applications) on our loacal machine)
+    * vagrant plugin install vagrant-hostmanager (to ping other servers(applications) on our loacal machine) ** if you have anyerror message    makesure you have the latest Vagrant install on your machine you can also reinstall vagrant
     * vagrant plugin install vagrant-vbguest
 4. Git bash or equivalent editor
