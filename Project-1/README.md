@@ -14,7 +14,7 @@
     * vagrant plugin install vagrant-vbguest
 4. Git bash or equivalent editor
 
-### Below are the list of services i will be preapring it's bash scripts;this scripts are in the folder [scripts](../Project-1/scripts)
+### Below are the list of services i will be preapring each bash scripts;this scripts are in the folder [scripts](../Project-1/scripts)
 1. MySQL (MariaDB): SQL Database
 2. Memcache: DB caching
 3. RabbitMQ: Broker/Queuing Agent
@@ -39,9 +39,9 @@
         git clone https://github.com/eregbene/DevOps-cloudprojects.git
 ```
 
-* Go to directory that our Vagrantfile [Vagrantfile](../Project-1/scripts/vagrantfile)exists and install the plugin before briging up the virtual machines(to ping each other).
+* Go to directory that our Vagrantfile [Vagrantfile](../Project-1/scripts/vagrantfile) exists and install the plugin before briging up the virtual machines(to ping each other).
 ```sh
-    cd Project-1/scripts
+    cd DevOps-cloudprojects/Project-1/scripts
     vagrant plugin install vagrant-hostmanager
 ```
 
