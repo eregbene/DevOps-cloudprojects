@@ -3,6 +3,7 @@
 [Project Source](https://github.com/eregbene/DevOps-cloudprojects.git)
 
 Prerequisites:
+* Computer
 * AWS Free trial Account 
 * Maven
 * JDK8
