@@ -4,7 +4,7 @@
 
  I will be deploying a Nginx,tomcat MySQL/MariaDB Memcached, RabbitMQ servers using vagrant.
 
-  ### I used Maven to build the .war artifact sourcecode https://github.com/devopshydclub/vprofile-project which will be deployed to the Tomcat server Many thanks to @imranteli for his awesome lectures - i will not fail you shifu. 
+  ### I used Maven to build the artifact which will be deployed to the Tomcat server 
 
 ## Prerequisite
 1. Oracle VM Virtualbox
@@ -50,4 +50,28 @@
     vagrant up
 ```
 ### Validate
-* Validae the VM are up are running from your vitual machine.
+* Validae the VM are up in he VBox
+![alt text](images/Screenshot%202023-01-12%20115450.png)
+
+* We can validate the application using hostname given in Vagrantfile. Go to browser http://web01. Frontend is working successfully.
+![alt text](Images/web01.png)
+
+* Backend services also up/running.
+![alt text](Image/../Images/backend.png)
+
+* We can validate RabbitMq service.
+![alt text](Image/../Images/rabbitmq.png)
+
+* Next we can check our DB/Memcache services.
+![alt text](Image/../Images/db.png)
+
+***Our application is working...Congratulations!!!***
+
+### We can now destroy our VM's
+* In the same vagrant file directory, run the following command to destroy the VM's.
+```sh
+    vagrant halt
+    vagrant destroy
+```
+
+### Many thanks to imranteli for his awesome lectures - i will not fail you shifu. 
