@@ -1,4 +1,4 @@
-## Lift and Shift Application Workflow to AWS
+# Lift and Shift Application Workflow to AWS
 
 [Project Source](https://github.com/eregbene/DevOps-cloudprojects.git)
 
