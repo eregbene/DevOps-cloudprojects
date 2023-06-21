@@ -51,19 +51,19 @@
 ```
 ### Validate
 * Validae the VM are up in he VBox
-![alt text](images/Screenshot%202023-01-12%20115450.png)
+![](images/Screenshot%202023-01-12%20115450.png)
 
 * We can validate the application using hostname given in Vagrantfile. Go to browser http://web01. Frontend is working successfully.
-![alt text](Images/web01.png)
+![](Images/web01.png)
 
 * Backend services also up/running.
-![alt text](Image/../Images/backend.png)
+![](Image/../Images/backend.png)
 
 * We can validate RabbitMq service.
-![alt text](Image/../Images/rabbitmq.png)
+![](Image/../Images/rabbitmq.png)
 
 * Next we can check our DB/Memcache services.
-![alt text](Image/../Images/db.png)
+![](Image/../Images/db.png)
 
 ***Our application is working...Congratulations!!!***
 
