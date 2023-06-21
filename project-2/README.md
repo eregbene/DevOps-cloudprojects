@@ -10,11 +10,12 @@ Prerequisites:
 * AWS CLI
 
 Project Architecture:
+
 ![Project Architecture](Images/project-architecture.webp)
 
 ### Create a security group for the services
   * create a security group named `vprofile-elb-sg` for our `land balancer` and configure `inbound rules` to allow port `80` and `443` from IPv4.
-  ![elb-sg](Images/Screenshot%202023-01-15%20215040.png)
+  ![elb-sg](Images/elb.png)
   * Create a security group `vprofile-app-SG` for our application server then allow port `22` and `8080` to accept connections from the security group above `vprofile-elb-sg` 
   ![app-sg](Images/app-sg.png)
   * Now create the final security group named `vprofile-backend-sg` for our backend servers. This security group is for our application backend and hence we would be opening the following for each services respectively;
