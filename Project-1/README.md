@@ -54,7 +54,8 @@
 ![](images/Screenshot%202023-01-12%20115450.png)
 
 * We can validate the application using hostname given in Vagrantfile. Go to browser http://web01. Frontend is working successfully.
-![](images/web01.png)
+
+ ![](images/Screenshot%202023-01-12%20115450.png)
 
 * Backend services also up/running.
 ![](images/backend.png)
