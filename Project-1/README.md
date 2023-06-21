@@ -50,20 +50,20 @@
     vagrant up
 ```
 ### Validate
-* Validae the VM are up in he VBox
+* Validae the VM are up in the VBox
 ![](images/Screenshot%202023-01-12%20115450.png)
 
 * We can validate the application using hostname given in Vagrantfile. Go to browser http://web01. Frontend is working successfully.
-![](Images/web01.png)
+![](images/web01.png)
 
 * Backend services also up/running.
-![](Image/../Images/backend.png)
+![](images/backend.png)
 
 * We can validate RabbitMq service.
-![](Image/../Images/rabbitmq.png)
+![](images/rabbitmq.png)
 
 * Next we can check our DB/Memcache services.
-![](Image/../Images/db.png)
+![](images/db.png)
 
 ***Our application is working...Congratulations!!!***
 
