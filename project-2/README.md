@@ -100,18 +100,20 @@ Project Architecture:
   UserData: [tomcat_ubuntu.sh](userdata/tomcat_ubuntu.sh)
 
 ### Create artifact locally with maven
-* Clone the [project source repository](https://github.com/devopshydclub/vprofile-project/tree/aws-LiftAndShift)
+* Clone the [artifact repository](https://github.com/eregbene/DevOps-cloudprojects/tree/aws-liftandshift)
 * Make changes where necessary in `application.properties` file under the `/src/main/resources` to the following below;
   ```sh
     jdbc.url=jdbc:mysql://db01.vprofile.in:3306/accounts?useUnicode=true&
     memcached.active.host=mc01.vprofile.in
     rabbitmq.address=rmq01.vprofile.in
   ```
-* Go to the `vprofile-project` directory where the `pom.xml` file exits and execute the command below to create our artifact;you need to have java(jdk8)and maven already install on you local machine.
+* Go to the `vprofile-project` directory where the `pom.xml` file exits and execute the command below to create our artifact;you need to have java(jdk8),awscli and maven already install on you local machine.
   ```sh
     mvn install
   ```
   ![build success](Images/build-success.png)
+
+* you can used my builded artifact if you are unable to do the above step [artifact repository](https://github.com/eregbene/DevOps-cloudprojects/tree/aws-liftandshift/target)
 
 ### Create S3 bucket using AWS CLI to copy our artifact to the server on the cloud from the local machine
 * Upload the artifact to the tomcat server through s3 bucket using the aws cli
@@ -122,15 +124,15 @@ Project Architecture:
   ```
 * Create bucket. The name must be unique because s3 is a global service in aws
   ```sh
-    aws s3 mb s3://vprofile-artifact-storage-rd-afz
+    aws s3 mb s3://vprofile-artifact-storage-vp
   ```
 * Go to the artifact directory and run the command below to copy the artifact to the s3 bucket
   ```sh
-    aws s3 cp vprofile-v2.war s3://vprofile-artifact-storage-rd-afz
+    aws s3 cp vprofile-v2.war s3://vprofile-artifact-storage-vp
   ```
 * Verify the file is now in the bucket through the cli by running the command below;
   ```sh
-    aws s3 ls vprofile-artifact-storage-rd-afz
+    aws s3 ls vprofile-artifact-storage-vp
   ```
 * We can also verify from the management console
   ![management console s3](Images/s3.png)
@@ -148,6 +150,7 @@ Project Architecture:
   ```sh
     sudo systemctl status tomcat8
   ```
+ ![tomcat-running](Images/tomcat-running.png)
 * stop the tomcat service and delete the `ROOT` file
   ```sh
     cd /var/lib/tomcat8/webapps/
@@ -157,8 +160,8 @@ Project Architecture:
 * We need to install aws cli on our tomcat server so that we can dowload the artifact and make it our tomcat service `ROOT` file.
   ```sh
     sudo apt install awscli -y
-    aws s3 ls s3://vprofile-artifact-storage-rd-afz
-    aws s3 cp s3://vprofile-artifact-storage-rd-afz/vprofile-v2.war /tmp/vprofile-v2.war
+    aws s3 ls s3://vprofile-artifact-storage-vp
+    aws s3 cp s3://vprofile-artifact-storage-vp/vprofile-v2.war /tmp/vprofile-v2.war
     cd /tmp
     sudo cp vprofile-v2.war /var/lib/tomcat8/webapps/ROOT.war
     sudo systemctl start tomcat8
@@ -169,7 +172,7 @@ Project Architecture:
     sudo cat /var/lib/tomcat8/webapps/ROOT/WEB-INF/classes/application.properties
   ```
 
-* We can validate network connectivity from server using telnet.
+* We can validate network connectivity from server using telnet.(validate backend services)
   ```sh
     sudo apt install telnet
     telnet db01.vprofile.in 3306
@@ -198,7 +201,6 @@ Project Architecture:
   ```
 ### Create Route53 record for ELB endpoint
 * We will create an A record with alias to ALB so that we can use our domain name to reach our application.
-  ![dns](Images/dns-image.png)
 * Validate our application using DNS.
    ![](Images/validate%20dns.png)
 
