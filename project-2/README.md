@@ -83,10 +83,10 @@ Project Architecture:
 
 ### Create a Private Hosted Zone in Route53
 * Now that our backend services are now running, lets updates the private IP's in Route53 DNS zone.
-  * *db01* == `172.31.89.21` 
-  * *mc01* == `172.31.81.3`
-  * *rmq01* == `172.31.80.70`
-* Create `vprofile.in`in `Private Hosted` zone using Route53 for our backend services. we will pick Default VPC in N.Virginia region. This recordso any changes would be used by our  `application.properties` file so whenever the public ip changes it won't affect our application.
+  * *db01* == `172.31.29.3` 
+  * *mc01* == `172.31.82.34`
+  * *rmq01* == `172.31.82.34`
+* Create `vprofile.in`in `Private Hosted` zone using Route53 for our backend services. we will pick Default VPC in N.Virginia region. This record so any changes would be used by our  `application.properties` file so whenever the public ip changes it won't affect our application.
   ![route53](Images/route53.png)
 
 ### Provision the application ec2 instances with userdata script
@@ -101,13 +101,13 @@ Project Architecture:
 
 ### Create artifact locally with maven
 * Clone the [project source repository](https://github.com/devopshydclub/vprofile-project/tree/aws-LiftAndShift)
-* Make changes where necessary in `application.properties` fle under the `/src/main/resources` to the following below;
+* Make changes where necessary in `application.properties` file under the `/src/main/resources` to the following below;
   ```sh
     jdbc.url=jdbc:mysql://db01.vprofile.in:3306/accounts?useUnicode=true&
     memcached.active.host=mc01.vprofile.in
     rabbitmq.address=rmq01.vprofile.in
   ```
-* Go to the `vprofile-project` directory where the `pom.xml` file exits and execute the command below to create our artifact;
+* Go to the `vprofile-project` directory where the `pom.xml` file exits and execute the command below to create our artifact;you need to have java(jdk8)and maven already install on you local machine.
   ```sh
     mvn install
   ```
