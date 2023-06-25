@@ -7,7 +7,7 @@
   * Maven
   * JDK8
 
-![Architecture](images/Project-4.png)
+  ![Architecture](images/Project-4.png)
 
 ### Step-1: Create Keypair for Beanstalk EC2 Login
 
