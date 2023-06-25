@@ -149,19 +149,19 @@ mysql -V
 - Before we login to database, we need to update `vprofile-backend-SG` Inbound rule to allow connection on port 3306 for `mysql-client-SG`
 After updating rule, try to connect with below command:
 ```sh
-mysql -h vprofile-rds-mysql.chrgxmhxkprk.us-east-1.rds.amazonaws.com -u admin -p<db_password>
+mysql -h vprofile-rds-mysql.c5xtkslxsyhu.us-east-1.rds.amazonaws.com -u admin -p<db_password>
 mysql> show databases;
 ```
 
 - Next we will clone our source code here to use script to initialize our database. After these commands we should be able to see 2 tables `role`, `user`, and `user_role`.
 
 ```sh
-git clone https://github.com/eregbene/DevOps-cloudprojects/tree/aws-liftandshift
+git clone https://github.com/eregbene/DevOps-cloudprojects.git
 cd DevOps-cloudprojects
-git checkout aws-Refactor
+git checkout aws-refactor
 cd src/main/resources
-mysql -h vprofile-rds-mysql.chrgxmhxkprk.us-east-1.rds.amazonaws.com -u admin -padvPtIYOfqGe4T41MUXk accounts < db_backup.sql
-mysql -h vprofile-rds-mysql.chrgxmhxkprk.us-east-1.rds.amazonaws.com -u admin -padvPtIYOfqGe4T41MUXk accounts
+mysql -h vprofile-rds-mysql.c5xtkslxsyhu.us-east-1.rds.amazonaws.com -u admin -pSIf205FrotGjiRpbXxfI accounts < db_backup.sql
+mysql -h vprofile-rds-mysql.c5xtkslxsyhu.us-east-1.rds.amazonaws.com -u admin -pSIf205FrotGjiRpbXxfI accounts
 show tables;
 ```
 
