@@ -3,3 +3,5 @@
 ### [Project-1](Project-1) :Vprofile Multi-Tier Web Application setup Locally (using VM and Vargrant for Automation)
 
 ### [Project-2](Project-2) :Lift and Shift strategy to move our vprofile project to Cloud(AWS)
+
+### [Project-3](Project-3) :Re-Architecting Web App on AWS Cloud[Cloud Native]
