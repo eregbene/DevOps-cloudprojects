@@ -170,10 +170,10 @@ show tables;
 - Our backend services are ready now. We will copy their endpoints from AWS console. These information will be used in our `application.properties` file
 ```sh
 RDS:
-vprofile-rds-mysql.chrgxmhxkprk.us-east-1.rds.amazonaws.com:3306
-ActiveMQ: amqps://b-b7d7bbcb-3894-4af7-8048-726a9ceabc43.mq.us-east-1.amazonaws.com:5671
+vprofile-rds-mysql.c5xtkslxsyhu.us-east-1.rds.amazonaws:3306
+ActiveMQ: b-d84c3b7e-344f-4df3-8e84-1fe4005fa8e6.mq.us-east-1.amazonaws.com:5671
 ElastiCache:
-vprofile-elasticache-svc.eqmmsw.cfg.use1.cache.amazonaws.com:11211
+vprofile-elasticache-svc.p4vaku.0001.use1.cache.amazonaws.com:11211
 ```
 
 #### Create Application
@@ -207,14 +207,11 @@ Custom TCP 3306 from Beanstalk SecGrp(you can find id from EC2 insatnces)
 Custom TCP 11211 from Beanstalk SecGrp
 Custom TCP 5671 from Beanstalk SecGrp
 ```
-![](images/backend-SecGrp.png)
-
 - In Elastic Beanstalk console, under our app environment, we need to clink Configuration and do below changes and apply:
 ```sh
 Add Listener HTTPS port 443 with SSL cert
 Processes: Health check path : /login
 ```
-
 ### Step-6: Build and Deploy Artifact
 
 - Go to directory that we cloned project, we need to checkout aws-refactor branch. Update below fields in `application.properties` file with correct endpoints and username/pwd.
@@ -228,32 +225,23 @@ rabbitmq.address
 rabbitmq.username
 rabbitmq.password
 ```
-
 - Go to root directory of project to the same level with `pom.xml` file. Run below command to build the artifact.
 ```sh
 mvn install
 ``` 
-
 #### Upload Artifact to Elastic Beanstalk
 
 - Go to Application versions and Upload the artifact from your local. It will autmatically upload the artifact to the S3 bucket created by Elasticbeanstalk.
 
 - Now we will select our uploaded application and click Deploy.
 
-![](images/app-deployed.png)
-
 - Let's check if our application deployed successfully.
-
-![](images/app-running-in-bs.png)
-![](images/app-running-from-beanstalk.png)
 
 ### Step-7: Create DNS Record in Route53 for Application
 
 - We will create an A record which aliasing Elastic Beanstalk endpoint.
 
 - Now we can reach our application securely with DNS name we have given.
-
-![](images/create-record-for-ebstalk.png)
 
 ### Step-8: Create Cloudfront Distribution for CDN
 
@@ -266,8 +254,6 @@ SSL Certificate:
 Security policy: TLSv1
 ``` 
 - Now we can check our application from browser.
-
-![](images/app-distributed-from-cdn.png)
 
 ### Step-9: Clean-up
 
