@@ -5,3 +5,5 @@
 ### [Project-2](Project-2) :Lift and Shift strategy to move our vprofile project to Cloud(AWS)
 
 ### [Project-3](Project-3) :Re-Architecting Web App on AWS Cloud[Cloud Native]
+
+### [Project-4](Project-4) :Continuous Integration Using jenkins, Nexus, Sonarqube and Slack
