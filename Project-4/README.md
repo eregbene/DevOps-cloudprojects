@@ -1,10 +1,8 @@
 # Project-4: Continuous Integration Using jenkins, Nexus, Sonarqube and Slack
 
-[*Project Source*](https://www.udemy.com/course/devopsprojects/?src=sac&kw=devops+projects)
-
 ## Pre-requisities:
 
- * AWS Account
+ * AWS Account free tier account
  * GitHub account
  * Jenkins
  * Nexus
@@ -635,7 +633,7 @@ stage('UPLOAD ARTIFACT') {
 
 - We will Login to slack and create a workspace by following the prompts. Then we will create a channel `jenkins-cicd` in our workspace.
 
-- Next we need to Add jenkins app to slack. Search in Google with `Slack apps`. Then search for `jenkins` add to Slack. We will choose the channel `jenkins-cicd`. It will give us to setup instructions, from there copy `Integration token credential ID` .
+- Next we need to Add jenkins app to slack. Search in Google with `Slack apps`. Then search for `jenkins` add to Slack. We will choose the channel `jenkins-cicd`. It will give us to setup instructions, from there copy `Integration token credential ID`23NZr327pF3aVadfWNYLuqyl .
 
 ![](images/slack-apps.png)
 
@@ -645,7 +643,7 @@ Workspace:  example (in the workspace url example.slack.com)
 credential: slacktoken 
 default channel: #jenkins-cicd
 ```
-- We will add our sonar token to global credentials.
+- We will add our slack token to global credentials.
 ```sh
 Kind: secret text
 Secret: <paste_token>
@@ -660,7 +658,7 @@ description: slacktoken
 post{
         always {
             echo 'Slack Notifications'
-            slackSend channel: '#jenkinscicd',
+            slackSend channel: '#jenkins-cicd',
                 color: COLOR_MAP[currentBuild.currentResult],
                 message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}"
         }
