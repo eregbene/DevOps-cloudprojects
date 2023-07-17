@@ -11,3 +11,5 @@
 ### [Project-5](Project-5) :Continuous Integration on AWS Cloud 
 
 ### [Project-6](Project-6) :Continuous Delivery with Jenkins and Tools
+
+### [Project-7](Project-7) :Continuous Delivery on AWS
