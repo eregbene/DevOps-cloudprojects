@@ -1,5 +1,5 @@
 
-# Project-8: Continuous Delivery on AWS
+# Project-7: Continuous Delivery on AWS
 
 ### Pre-Requisites:
 
