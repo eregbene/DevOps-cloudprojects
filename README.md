@@ -12,4 +12,4 @@
 
 ### [Project-6](Project-6) :Continuous Delivery with Jenkins and Tools
 
-### [Project-7](Project-7) :Continuous Delivery on AWS
+### [Project-7](Project-7) :Continuous Delivery on AWS.
