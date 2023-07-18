@@ -293,7 +293,7 @@ sudo -i
 yum install mysql git -y
 mysql -h <RDS_endpoint> -u <RDS_username> -p<RDS_password>
 show databases;
-git clone https://github.com/rumeysakdogan/vprofileproject-all.git
+git clone https://github.com/eregbene/vprofileproject-all.git
 cd vprofileproject-all/
 git checkout cd-aws
 cd src/main/resources
