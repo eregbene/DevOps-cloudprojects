@@ -13,3 +13,5 @@
 ### [Project-6](Project-6) :Continuous Delivery with Jenkins and Tools
 
 ### [Project-7](Project-7) :Continuous Delivery on AWS.
+
+### [Project-8](Project-8) :Ansible for AWS VPC
