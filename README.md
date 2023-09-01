@@ -17,3 +17,5 @@
 ### [Project-8](Project-8) :Ansible for AWS VPC
 
 ### [Project-9](Project-9) :Complete Provisioning With Ansible
+
+### [Project-10](Project-10) :Hybrid Continuous Delivery (Jenkins&AWS)
