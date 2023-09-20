@@ -1,6 +1,6 @@
 # Project-11: Containerization of Java Application using Docker
 
-![](images/Project-12.png)
+![](images/Project-11.png)
 
 ## Pre-requisities:
 
