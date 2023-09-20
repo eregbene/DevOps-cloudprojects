@@ -1,4 +1,4 @@
-# Project-12: Containerization of Java Application using Docker
+# Project-11: Containerization of Java Application using Docker
 
 ![](images/Project-12.png)
 
