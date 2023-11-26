@@ -21,3 +21,5 @@
 ### [Project-10](Project-10) :Hybrid Continuous Delivery (Jenkins&AWS)
 
 ### [Project-11](Project-11) :Containerization of Java Application using Docker
+
+### [Project-12](Project-12) :Java App Deployment on Kubernetes Cluster
